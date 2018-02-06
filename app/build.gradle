@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+android {
+    // 생활지수 오픈소스 합칠때 넣음
+    signingConfigs {
+        release {
+            keyAlias 'key'
+            keyPassword 'chlentn94'
+            storeFile file('C:/Users/dusu/.AndroidStudio2.3/key.jks')
+            storePassword 'chlentn94'
+        }
+    }
+
+
+    compileSdkVersion 26
+
+    defaultConfig {
+
+        applicationId "com.example.ggavi.registeration"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        multiDexEnabled true
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '26.0.2'
+
+    // 생활지수 오픈소스 합칠때 사용
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile 'com.android.support:multidex:1.0.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+
+    // 로그인 회원가입 php 연동 강좌에서 추가한 라이브러리
+    compile 'com.android.volley:volley:1.0.0'
+    implementation 'com.google.android.gms:play-services:11.8.0'
+
+
+
+
+    // 생활지수 오픈소스 합칠때 복사 붙여넣기
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
+    compile project(':airquality-release')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile "com.github.katoro:typekit:1.0.1"  // 이거 때문에 글꼴 충돌해서 구글링해보니 깃허브로 수정하라고 떠서 고침
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:25.3.1'
+    testCompile 'junit:junit:4.12'
+}

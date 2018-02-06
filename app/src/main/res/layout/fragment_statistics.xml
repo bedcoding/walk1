@@ -1,0 +1,102 @@
+<!-- Fragment 이놈은 기본적으로 특정한 화면 안에 있는
+     세부적인 화면을 만들 때 많이 사용하는 레이아웃이다 -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ggavi.registeration.ahn1.StatisticsFragment"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신이 좋아하는 코스"
+            android:textColor="#000000" />
+
+
+        <!-- 지금은 필요없어서 숨겼다 -->
+        <!-- 내가 몇개의 코스를 신청했는지 보여주는 부분 -->
+        <!-- 그러나 현재 1개 밖에 신청할 수 없도록 해놔서 필요없다 -->
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0개"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/totalCredit"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffffff"
+        android:layout_margin="10dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/courseListView"
+            android:divider="#ffffff"
+            android:dividerHeight="10dp"
+            android:padding="5dp">
+        </ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:gravity="center">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인기 순위: "
+            android:textColor="#ffffff"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/rankSpinner">
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:layout_margin="10dp">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rankListView"
+            android:divider="#ffffff"
+            android:dividerHeight="10dp"
+            android:padding="5dp">
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

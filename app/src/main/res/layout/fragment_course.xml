@@ -1,0 +1,131 @@
+<!-- Fragment 이놈은 기본적으로 특정한 화면 안에 있는
+     세부적인 화면을 만들 때 많이 사용하는 레이아웃이다 -->
+
+<!-- 목록 버튼을 눌렀을때 나오는 fragment 디자인 -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ggavi.registeration.ahn1.CourseFragment"
+    android:background="@color/colorBackground">
+
+
+    <RadioGroup
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/courseUniversityGroup"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="걷는길"
+            android:id="@+id/university"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="자전거길"
+            android:id="@+id/graduate"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/yearSpinner">
+        </Spinner>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/termSpinner">
+        </Spinner>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation = "horizontal">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/areaSpinner">
+        </Spinner>
+
+        <!-- 4번째 버튼은 현재 필요없으므로 "gone"을 해서 안보이게 숨겼습니다
+             나중에 기능 확장하게 되어 4번째 데이터가 필요하게 될 경우에만
+             DB에서 4번째 데이터를 활용하시고 이 버튼을 다시 활성화 시키십시오.
+             현재 php와 DB와 연동되어 있어서 삭제하면 에러가 납니다
+
+             참고: 지금은 "선택"이라는 임시 값이 DB로 전송됩니다 -->
+
+        <Spinner
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/majorSpinner">
+        </Spinner>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="364dp"
+            android:layout_height="40dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:background="@color/colorWarning"
+            android:text="검색"
+            android:layout_gravity="center"
+            android:id="@+id/searchButton"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="#ffffff">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/courseListView"
+            android:dividerHeight="10dp"
+            android:divider="#ffffff"
+            android:padding="5dp">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

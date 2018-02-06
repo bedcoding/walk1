@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/recommeded_courses"
+        android:title= "추천 코스 보기"/>
+    <item android:id="@+id/weightSetting"
+        android:title= "몸무게 설정"/>
+</menu>

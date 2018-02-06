@@ -1,0 +1,312 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context="kr.cds.jisulife.ExpressionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="생활지수는 기상청에서 제공하는 생활기상지수와 보건기상지수, 서울시에서 제공하는 모기예보에 대기질정보까지 통합하여 한 번에 보면서 정확한 수치까지 얻을 수 있는 앱입니다. "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="'생활기상지수' 란?"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="1. 자외선지수"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="자외선지수는 태양고도가 최대인 남중시간 때 지표에 도달하는 자외선 B(UV-B)영역의 복사량을 지수로 환산한 것 &#10;서비스 기간 : 3월 ~ 11월 &#10;예보 시간 : 일 2회(6시, 18시)&#10;"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="2. 식중독지수"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="최근 5년(‘10년~‘14년) 동안의 세균성, 바이러스성 식중독 발생 유무를 기반으로 기상에 따른 식중독 발생 가능성을 나타내는 것&#10; * 식중독지수는 기상청, 식약처, 국민건강보험공단, 국립환경과학원이 공동으로 개발한 지수입니다&#10;서비스 기간 : 연중&#10;예보 시간 : 일 2회(6시, 18시)&#10;"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="3. 불쾌지수"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="- 기온과 습도의 조합으로 사람이 느끼는 온도를 표현한 것으로 온습도지수(THI)라고도 함 &#10;- 개인에 따라 쾌감대의 범위가 다른 것처럼 불쾌지수 값에 따라 불쾌감을 느끼는 정도도 개인에 따라 약간의 차이가 있음&#10;서비스 기간 : 6월 ~ 9월&#10;예보 시간 : 일 8회(00시부터 3시간 간격)&#10;"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="4. 열지수"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="- 기온과 습도에 따른 사람이 실제로 느끼는 더위를 지수화한 것 &#10;- 열지수는 그늘지고 약한 바람이 부는 환경에서 만들어진 것이므로 태양빛에 직접 노출되면 열지수 값이 발표치보다 8.3℃ 정도 더 높아질 수 있음 &#10;- 강한 바람, 특히 뜨겁고 습한 바람이 불면 더 위험한 환경이 될 수 있으며, 동일한 기온이라도 습도에 따라 열지수가 달라짐 &#10;서비스 기간 : 6월 ~ 9월 &#10;예보 시간 : 일 8회(00시부터 3시간 간격) &#10;"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="5. 체감온도"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="- 외부에 있는 사람이나 동물이 바람과 한기에 노출된 피부로부터 열을 빼앗길 때 느끼는 추운 정도를 나타내는 지수&#10;- 바람이 강해질수록 피부의 열 손실률은 높아지게 되며 결국 내부체온을 떨어뜨리게 됨&#10;서비스 기간 : 11월 ~ 3월&#10;예보 시간 : 일 8회(00시부터 3시간 간격)&#10;"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="6. 동파가능지수"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="- 기온과 일최저기온을 이용하여, 겨울철 한파로 인해 발생되는 수도관 및 계량기의 동파발생가능성을 나타낸 지수&#10;- 서울상수도사업본부 및 서울시 수도자제사업부에서 사용하고 있는 수도관 동파 기준에 근거하여 개발되었으며, 한파로 인한 가정용, 공업용 수도관 및 계량기의 동파 가능성을 예측, 방지대책을 세우거나 계량기 설계와 관련된 내구성을 측정하는데 활용될 수 있음&#10;서비스 기간 : 12월 ~ 2월&#10;예보 시간 : 일 8회(00시부터 3시간 간격)&#10;"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="7. 감기가능지수"
+           android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="3sp"
+            android:text="- 기상조건(최저기온, 일교차, 현지기압, 상대습도)에 따른 감기 발생 가능정도를 지수화서비스&#10;기간 : 9월~4월&#10;예보 시간 : 일 2회(6시, 18시)"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="20dp"
+            android:text="자세한 정보는 아래 주소를 통해 얻을 수 있습니다." />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:text=" 출처 : 기상청 생활기상정보" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:autoLink="web"
+            android:text="http://www.kma.go.kr/weather/lifenindustry/life_jisu.jsp?JISU_INFO=index_info1_1"
+            android:textAllCaps="false"
+            android:textColorLink="@color/colorPrimary" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/constraintLayout1"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/colorButtonNormal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="'모기예보제' 란?"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/_2"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="모기발생 예보단계"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="2.08"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/_4"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="20dp"
+            android:text="자세한 정보는 아래 주소를 통해 얻을 수 있습니다." />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:text=" 출처 : 서울시 모기예보제" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:autoLink="web"
+            android:text="http://health.seoul.go.kr/mosquito"
+            android:textAllCaps="false"
+            android:textColorLink="@color/colorPrimary" />
+
+    </LinearLayout>
+</ScrollView>
