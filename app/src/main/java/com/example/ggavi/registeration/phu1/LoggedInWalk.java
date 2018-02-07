@@ -41,7 +41,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.ggavi.registeration.R;
-import com.example.ggavi.registeration.ahn1.FirstActivity;
+import com.example.ggavi.registeration.phu1.FirstActivity;
 import com.example.ggavi.registeration.ahn1.MainActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -232,7 +232,14 @@ public class LoggedInWalk extends AppCompatActivity implements OnMapReadyCallbac
                     trackingButton.setBackgroundResource(R.drawable.rounded_button1);
                     isTracking = true; //tracking started (트래킹시작)
 
+                    //setting system time as start time (시스템의 시간을 가져와 startTime로 설정)
+                    startTime = SystemClock.uptimeMillis();
+                    //handler starts (핸들러 시작)
+                    handler.postDelayed(runnable, 0);
 
+                    //step counter registered (걸음 수 측정 레지스터)
+                    numSteps = 0;
+                    sensorManager.registerListener(LoggedInWalk.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
 
                     //requesting location updates according to sdk version & whether permission is granted or not
                     //(sdk버전 & permission 여부에 따라 위치 업데이트를 요청)
@@ -249,14 +256,7 @@ public class LoggedInWalk extends AppCompatActivity implements OnMapReadyCallbac
                             if (ContextCompat.checkSelfPermission(LoggedInWalk.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                                 LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, gpsListener);
                             }
-                            //setting system time as start time (시스템의 시간을 가져와 startTime로 설정)
-                            startTime = SystemClock.uptimeMillis();
-                            //handler starts (핸들러 시작)
-                            handler.postDelayed(runnable, 0);
 
-                            //step counter registered (걸음 수 측정 레지스터)
-                            numSteps = 0;
-                            sensorManager.registerListener(LoggedInWalk.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
 
                         } else {
                             checkLocationPermission();
@@ -276,7 +276,7 @@ public class LoggedInWalk extends AppCompatActivity implements OnMapReadyCallbac
                             //step counter registered (걸음 수 측정 레지스터)
                             numSteps = 0;
                             sensorManager.registerListener(LoggedInWalk.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
-                           // mMap.setMyLocationEnabled(true);
+                            // mMap.setMyLocationEnabled(true);
                         }
 /*
 if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) ==
@@ -338,7 +338,7 @@ if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_F
                         System.out.println("speed>>"+speed);
                         //speed = kmFormat.format(speed);
                         final String speedRecord=kmFormat.format(speed);
-                      //  speedRecord = Double.toString((Double.parseDouble(distanceRecord) / Double.parseDouble(timeMinute)) * 60);
+                        //  speedRecord = Double.toString((Double.parseDouble(distanceRecord) / Double.parseDouble(timeMinute)) * 60);
 
                         System.out.println("formatted>>"+speedRecord);
                         //System.out.println("speed>>"+speedRecord);
@@ -354,12 +354,12 @@ if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_F
 
 
                                     if (success) {
-                                       // Toast.makeText(LoggedInWalk.this, "success", Toast.LENGTH_LONG).show();
+                                        // Toast.makeText(LoggedInWalk.this, "success", Toast.LENGTH_LONG).show();
                                     }
 
 
                                     else {
-                                      //  Toast.makeText(LoggedInWalk.this, "failed", Toast.LENGTH_LONG).show();
+                                        //  Toast.makeText(LoggedInWalk.this, "failed", Toast.LENGTH_LONG).show();
                                     }
                                 } catch (Exception e) {
                                     e.printStackTrace();
@@ -700,4 +700,3 @@ if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_F
     }
 
 }
-

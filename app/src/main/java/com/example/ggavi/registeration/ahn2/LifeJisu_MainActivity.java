@@ -1,6 +1,8 @@
 package com.example.ggavi.registeration.ahn2;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -11,9 +13,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.ggavi.registeration.R;
+import com.example.ggavi.registeration.phu1.FirstActivity;
+import com.example.ggavi.registeration.phu1.NormalMode;
+import com.example.ggavi.registeration.phu1.SavedSharedPreference;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class LifeJisu_MainActivity extends AppCompatActivity
@@ -68,6 +82,41 @@ public class LifeJisu_MainActivity extends AppCompatActivity
         }
     }
 
+
+
+    //adding the menu on tool bar (액션바에서 메뉴 추가)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.weather_new_menu, menu);
+        return true;
+    }
+
+    // adding actions that will be done on clicking menu items
+    // (메뉴 아이템들을 클릭할 때 발생할 이벤트 추가)
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            // 버튼: 날씨/대기정보
+            case R.id.home:
+                home();
+                return true;
+
+            default:
+                return true;
+        }
+    }
+
+    // 버튼 (메인으로 이동)
+    public void home() {
+        Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -88,6 +137,7 @@ public class LifeJisu_MainActivity extends AppCompatActivity
         else if (id == R.id.nav_expression) {
             transaction.replace(R.id.content_frame, expressionFragment);
         }
+
         else if (id == R.id.nav_air) {
             transaction.replace(R.id.content_frame, airFragment);
         }

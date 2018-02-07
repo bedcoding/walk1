@@ -37,8 +37,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ggavi.registeration.R;
-import com.example.ggavi.registeration.ahn1.FirstActivity;
-import com.example.ggavi.registeration.ahn1.MainActivity;
+import com.example.ggavi.registeration.ahn2.LifeJisu_MainActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -215,7 +214,8 @@ public class NormalMode extends AppCompatActivity implements OnMapReadyCallback,
         return true;
     }
 
-    //adding actions that will be done on clicking menu items (메뉴 아이템들을 클릭할 때 발생할 이벤트 추가)
+    // adding actions that will be done on clicking menu items
+    // (메뉴 아이템들을 클릭할 때 발생할 이벤트 추가)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -223,18 +223,27 @@ public class NormalMode extends AppCompatActivity implements OnMapReadyCallback,
             case R.id.recommeded_courses:
                 recommendedCourses();
                 return true;
+
             case R.id.weightSetting:
                 weightSetting();
                 return true;
+
+            // 3번째 버튼: 날씨/대기정보
+            case R.id.plus_weather:
+                plus_weather();
+                return true;
+
             default:
                 return true;
         }
     }
 
+    // 1번째 버튼
     public void recommendedCourses() { //here, we need to intent to activity that shows recommended courses (추천 코스를 보여주는 액티비티로 인텐트해야 함)
         Toast.makeText(NormalMode.this, "추천 코스로 이동", Toast.LENGTH_LONG).show();
     }
 
+    // 2번째 버튼
     public void weightSetting() {
         final Dialog dialog = new Dialog(NormalMode.this); //here, the name of the activity class that you're writing a code in, needs to be replaced
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); //for title bars not to be appeared (타이틀 바 안보이게)
@@ -273,6 +282,13 @@ public class NormalMode extends AppCompatActivity implements OnMapReadyCallback,
                 dialog.dismiss();
             }
         });
+    }
+
+    // 3번째 버튼 (날씨/대기정보)
+    public void plus_weather() {
+        Intent intent = new Intent(getApplicationContext(), LifeJisu_MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.ggavi.registeration.ahn1;
+package com.example.ggavi.registeration.phu1;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -12,7 +12,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ggavi.registeration.phu1.NormalMode;
+import com.example.ggavi.registeration.ahn1.LoginActivity;
+import com.example.ggavi.registeration.ahn1.Pop;
 import com.example.ggavi.registeration.R;
 
 
@@ -47,7 +48,6 @@ public class FirstActivity extends AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), NormalMode.class);
                 startActivityForResult(intent, 0);
                 finish();
-
             }
         });
 

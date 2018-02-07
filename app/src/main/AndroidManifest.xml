@@ -60,7 +60,7 @@
         <activity
             android:name=".ahn1.Pop"
             android:theme="@style/AppTheme.Pop" />
-        <activity android:name=".ahn1.FirstActivity" />
+        <activity android:name=".phu1.FirstActivity" />
         <activity android:name=".phu1.NormalMode"/>
         <activity android:name=".phu1.LoggedInWalk"/>
 

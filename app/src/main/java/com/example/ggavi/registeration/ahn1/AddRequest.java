@@ -18,7 +18,7 @@ public class AddRequest extends StringRequest {
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("courseID", courseID);
-        // 특정한 사람이 특정한 강의를 선택하면 DB에 저장
+        // 특정한 사람이 특정한 코스를 선택하면 DB에 저장
     }
 
     @Override

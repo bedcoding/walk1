@@ -4,4 +4,6 @@
         android:title= "추천 코스 보기"/>
     <item android:id="@+id/weightSetting"
         android:title= "몸무게 설정"/>
+    <item android:id="@+id/plus_weather"
+        android:title= "날씨/대기정보"/>
 </menu>

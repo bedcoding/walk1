@@ -1,4 +1,4 @@
-package com.example.ggavi.registeration.ahn1;
+package com.example.ggavi.registeration.phu1;
 
 
 import android.app.Dialog;

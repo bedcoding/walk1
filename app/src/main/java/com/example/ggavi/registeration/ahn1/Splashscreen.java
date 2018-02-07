@@ -2,17 +2,10 @@ package com.example.ggavi.registeration.ahn1;
 
 
 // (24) 시작 화면을 만들기 위해 넣음 (실행시 나오는 로고 영상)
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.PixelFormat;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -20,10 +13,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.ggavi.registeration.R;
+import com.example.ggavi.registeration.phu1.FirstActivity;
 import com.example.ggavi.registeration.phu1.SavedSharedPreference;
-
-
-import static com.example.ggavi.registeration.phu1.LoggedInWalk.MY_PERMISSIONS_REQUEST_LOCATION;
 
 
 public class Splashscreen extends Activity {

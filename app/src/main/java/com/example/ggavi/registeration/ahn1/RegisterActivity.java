@@ -16,7 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.ggavi.registeration.R;
-import com.example.ggavi.registeration.phu1.LoggedInWalk;
+import com.example.ggavi.registeration.phu1.CustomConfirmDialog;
 
 import org.json.JSONObject;
 
