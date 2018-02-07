@@ -201,8 +201,6 @@ public class NormalMode extends AppCompatActivity implements OnMapReadyCallback,
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(NormalMode.this);
         }
-
-
     }
 
 

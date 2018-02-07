@@ -41,6 +41,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.ggavi.registeration.R;
+import com.example.ggavi.registeration.ahn2.LifeJisu_MainActivity;
 import com.example.ggavi.registeration.phu1.FirstActivity;
 import com.example.ggavi.registeration.ahn1.MainActivity;
 import com.google.android.gms.common.ConnectionResult;
@@ -215,6 +216,57 @@ public class LoggedInWalk extends AppCompatActivity implements OnMapReadyCallbac
                     .findFragmentById(R.id.mapL);
             mapFragment.getMapAsync(LoggedInWalk.this);
         }
+    }
+
+
+
+    //adding the menu on tool bar (액션바에서 메뉴 추가)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.normal_mode_menu, menu);
+        return true;
+    }
+
+    // adding actions that will be done on clicking menu items
+    // (메뉴 아이템들을 클릭할 때 발생할 이벤트 추가)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.recommeded_courses:
+                recommendedCourses();
+                return true;
+
+/*          // 2번째 버튼 주석처리
+            case R.id.weightSetting:
+                weightSetting();
+                return true;
+*/
+
+            // 3번째 버튼: 날씨/대기정보
+            case R.id.plus_weather:
+                plus_weather();
+                return true;
+
+            default:
+                return true;
+        }
+    }
+
+    // 1번째 버튼
+    public void recommendedCourses() { //here, we need to intent to activity that shows recommended courses (추천 코스를 보여주는 액티비티로 인텐트해야 함)
+        Toast.makeText(LoggedInWalk.this, "추천 코스로 이동", Toast.LENGTH_LONG).show();
+    }
+
+    // 2번째 버튼 안넣음
+    // ㅠㅠ
+
+    // 3번째 버튼 (날씨/대기정보)
+    public void plus_weather() {
+        Intent intent = new Intent(getApplicationContext(), LifeJisu_MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
