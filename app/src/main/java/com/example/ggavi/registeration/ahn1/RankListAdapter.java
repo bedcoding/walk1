@@ -20,7 +20,7 @@ public class RankListAdapter extends BaseAdapter {
 
     private Context context;
     private List<Course> courseList;      // Course가 들어가는 리스트를 만들어줌
-    private Fragment parent;              // 12강 추가
+    private Fragment parent;
 
 
 
@@ -56,6 +56,8 @@ public class RankListAdapter extends BaseAdapter {
         View v = View.inflate(context, R.layout.rank, null);  // rank.xml
 
         // rank.xml이라는 레이아웃에 있는 모든 원소가 하나의 변수로써 자리잡게 되었다.
+        // 수강신청 코드를 길추천 코드로 고치면서 안 쓰이는 값은 화면에 안보이게 해놨다.
+        // DB에는 그대로 아래 정보들이 남아 있어서 그냥 1로 넣어두고 안보이게 처리(...)
         TextView rankTextView = (TextView) v.findViewById(R.id.rankTextView);
         //TextView courseGrade = (TextView) v.findViewById(R.id.courseGrade);
         TextView courseTitle = (TextView) v.findViewById(R.id.courseTitle);

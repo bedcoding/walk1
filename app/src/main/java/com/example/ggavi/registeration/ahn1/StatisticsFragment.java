@@ -78,9 +78,10 @@ public class StatisticsFragment extends Fragment {
     // (18) 추가
     private ListView courseListView;
     private StatisticsCourseListAdapter adapter;    // 어댑터 만들어주고
-    private List<Course> courseList;                // 강의 클래스가 인스턴스로 들어게 해주고
+    private List<Course> courseList;                // 코스 클래스가 인스턴스로 들어게 해주고
 
-    // (19) 위에 있던거 지우고 다시 만듬 (총 학점수 : 현재 해당 학생 신청)
+    // (19) 1명당 최대 신청 가능한 길추천 코스 갯수를 제한하기 위해 만든 코드.
+    // 근데 지금은 어차피 길추천 데이터가 1개만 들어가도록 수정해서 필요없긴 하다.
     public static int totalCredit = 0;
     public static TextView credit;
 
@@ -125,7 +126,8 @@ public class StatisticsFragment extends Fragment {
         rankListAdapter = new RankListAdapter(getContext().getApplicationContext(), rankList, this);  // 생성자 초기화
         rankListView.setAdapter(rankListAdapter);
 
-        // 계속 랭킹 실행시키면 터지길래 구글링해봄.
+        // (28) 계속 랭킹 실행시키면 터지길래 구글링해서 넣음
+        // (30) 근데 지금은 DB 불러오는 동안 '로딩중'이란 창이 뜨게 설정해놔서 터질 일이 없음
         rankAdapter.notifyDataSetChanged();
 
 
@@ -246,7 +248,9 @@ public class StatisticsFragment extends Fragment {
                 JSONArray jsonArray = jsonObject.getJSONArray("response");  //아까 변수 이름
 
 
-                // 복붙하고 변경되는 부위
+                // 복붙하고 변경되는 부위 수정
+                // (30) 현재 대부분의 값이 안 쓰인다.
+                // (30) 값은 불러오되 화면에서 안 보이게 고침(...)
                 int count = 0;
                 int courseID;
                 String courseGrade;
@@ -254,7 +258,7 @@ public class StatisticsFragment extends Fragment {
                 String courseProfessor;
                 int courseCredit;
                 int courseDivide;
-                int coursePersonnel;  // 전체 강의 인원
+                int coursePersonnel;  // 전체 코스 인원
                 String courseTime;
 
 
@@ -275,7 +279,7 @@ public class StatisticsFragment extends Fragment {
                     courseTime = object.getString("courseTime");
 
 
-                    // 강의 추가 부분 (우리에게 필요한 것만 생성자로)
+                    // 코스 추가 부분 (우리에게 필요한 것만 생성자로)
                     rankList.add(new Course(courseID, courseGrade, courseTitle, courseCredit, courseDivide, coursePersonnel, courseTime, courseProfessor));  // Course.java에서 추가한 생성자 부분을 그대로 넣어준다
                     count++;
                 }
@@ -304,7 +308,7 @@ public class StatisticsFragment extends Fragment {
 
         @Override
         protected void onPreExecute() {
-            // 스케쥴 리스트를 검사할 수 있도록 userID를 넣어줌
+
             try
             {
                 target = "http://ggavi2000.cafe24.com/ByMale.php";  //해당 웹 서버에 접속
@@ -372,7 +376,9 @@ public class StatisticsFragment extends Fragment {
                 JSONArray jsonArray = jsonObject.getJSONArray("response");  //아까 변수 이름
 
 
-                // 복붙하고 변경되는 부위
+                // 복붙하고 변경되는 부위 수정
+                // (30) 현재 대부분의 값이 안 쓰인다.
+                // (30) 값은 불러오되 화면에서 안 보이게 고침(...)
                 int count = 0;
                 int courseID;
                 String courseGrade;
@@ -498,7 +504,9 @@ public class StatisticsFragment extends Fragment {
                 JSONArray jsonArray = jsonObject.getJSONArray("response");  //아까 변수 이름
 
 
-                // 복붙하고 변경되는 부위
+                // 복붙하고 변경되는 부위 수정
+                // (30) 현재 대부분의 값이 안 쓰인다.
+                // (30) 값은 불러오되 화면에서 안 보이게 고침(...)
                 int count = 0;
                 int courseID;
                 String courseGrade;
@@ -623,6 +631,8 @@ public class StatisticsFragment extends Fragment {
                 // response에 각각의 리스트가 담기게 됨
                 JSONArray jsonArray = jsonObject.getJSONArray("response");  //아까 변수 이름
 
+                // (30) 현재 대부분의 값이 안 쓰인다.
+                // (30) 값은 불러오되 화면에서 안 보이게 고침(...)
                 int count = 0;
                 int courseID;
                 String courseGrade;

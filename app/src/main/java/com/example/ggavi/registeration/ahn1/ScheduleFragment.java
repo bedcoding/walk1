@@ -277,7 +277,7 @@ public class ScheduleFragment extends Fragment {
 
             // 스케쥴에서 세팅 (모든 강의가 추가된 이후 세팅이 마쳐져서 텍스트 뷰에 출력이 되는 것)
             schedule.setting(monday, tuesday, wednesday, thursday, friday, getContext());
-            //schedule.setting(monday, getContext()); 하나만 남기고 필요없는건 지우고 싶은데 안되더라
+            //schedule.setting(monday, getContext()); 하나만 남기고 필요없는건 지우고 싶은데 빨간줄 떠서 포기
         }
     }
 

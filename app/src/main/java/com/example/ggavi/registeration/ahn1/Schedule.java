@@ -7,6 +7,7 @@ import com.example.ggavi.registeration.ahn1.AutoResizeTextView;
 
 public class Schedule {
 
+    // 본래 시간표였지만 값이 1개만 나오게 바꿔버렸다 ㅋㅋㅋㅋㅋ
     // 월요일부터 금요일까지의 모든 교시 데이터 (0교시~13교시)
     private String monday[] = new String[1];
     //private String tuesday[] = new String[14];
@@ -18,8 +19,8 @@ public class Schedule {
     // 생성자
     public Schedule() {
 
-        // 모든 날짜에 강의 정보가 공백이 들어가게 한다.
-        for(int i=0; i<1; i++)
+        // 모든 날짜에 코스 정보가 공백이 들어가게 한다.
+        for(int i=0; i<1; i++)  // 값 1개만 들어가는데 for문을 왜 남겨둔거냐
         {
             monday[i] = "";
             //tuesday[i] = "";
@@ -31,7 +32,7 @@ public class Schedule {
 
 
     // 스케쥴 정보를 담는 특정한 텍스트가 있을때,
-    // 이 데이터를 파싱해서 강의 정보가 들어가는 배열에 넣어준다
+    // 이 데이터를 파싱해서 코스 정보가 들어가는 배열에 넣어준다
     public void addSchedule(String scheduleText) {
         int temp;
 
@@ -202,8 +203,12 @@ public class Schedule {
 
 */
 
-    // 새롭게 추가하려는 수강신청의 날짜 데이터가,
+    // 새롭게 추가하려는 추천길의 데이터가,
     // 현재 자리잡고 있는 스케쥴 데이터와 중복되지 않는지 체크해주는 함수
+
+    // 본래 시간표였지만 그냥 데이터 1개만 들어가게 해놨다.
+    // 그래서 모든 DB데이터가 그냥 월[1]로 설정되어 있다.
+
     public boolean validate(String scheduleText) {
 
         // 아무것도 없는 경우
@@ -403,8 +408,7 @@ public class Schedule {
     }
 
     // 스케쥴 정보를 담는 특정한 텍스트가 있을때,
-    // 이 데이터를 파싱해서 강의 정보가 들어가는 배열에 넣어준다
-    // (15) 강의 제목, 강의를 연 교수 이름까지 받음
+    // 이 데이터를 파싱해서 코스 정보가 들어가는 배열에 넣어준다
     public void addSchedule(String scheduleText, String courseTitle, String courseProfessor) {
         /*
         String professor;
@@ -600,17 +604,20 @@ public class Schedule {
 
     }
 
-    // (15) 텍스트 뷰에 해당 강의 목록들을 보여줄 수 있도록 세팅한 함수
-    // 특정한 강의가 해당 시간에 이미 들어가 있다면 monday라는 TextView에 현재 강의를 출력할 수 있도록 해야 함
+    // (15) 텍스트 뷰에 해당 코스 목록들을 보여줄 수 있도록 세팅한 함수
+    // 특정한 코스가 해당 시간에 이미 들어가 있다면 monday라는 TextView에 현재 코스를 출력할 수 있도록 해야 함
+
     // (16) TextView를 깃허브에서 긁어온 AutoResizeTextView로 모두 교체 (자동 글자크기 조절)
+    // (30) 근데 지금은 데이터가 1개 밖에 안 들어가므로 딱히 필요없긴 한데 지우기 아까워서 남겨뒀다.
     public void setting(AutoResizeTextView[] monday, AutoResizeTextView[] tuesday, AutoResizeTextView[] wednesday, AutoResizeTextView[] thursday, AutoResizeTextView[] friday, Context context) {
 
         // 현재 TextView에 들어가는 내용 중에서 가장 긴 텍스트를 골라서 칸을 이쁘게 맞춰준다.
         int maxLength = 0;
         String maxString = "";
-        for(int i=0; i<1; i++)     // 1
+        for(int i=0; i<1; i++)     // 값이 1개만 들어가도록 수정했지만 for문 지우기 아까워서 남겨둠
         {
             // 만약 현재 텍스트의 길이가 가장 긴 텍스트의 길이보다 긴 경우
+            // 근데 지금은 이 부분이 쓸모없다 (어차피 값이 1개만 들어가니까)
             if(this.monday[i].length() > maxLength)
             {
                 // maxLength에 최고로 긴 문장 갱신
@@ -660,7 +667,7 @@ public class Schedule {
         }
 
 
-        // 0부터 13교시까지
+        // 0부터 13교시까지 → 1개로 수정 (근데 이러면 반복문이 의미가 없는데)
         for(int i = 0; i<1; i++)
         {
             // 만약 현재 배열에 들어있는 값이 비어있지 않다면
@@ -672,7 +679,7 @@ public class Schedule {
                 // DB에서 값을 불러왔는지 if문으로 체크 (급히 화면 전환하면 터져길래 넣음)
                 if (context != null)
                 {
-                    // 해당 강의가 존재할 때 글자색상이 바뀜
+                    // 해당 코스가 존재할 때 글자색상이 바뀜
                     monday[i].setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
                 }
             }
@@ -683,7 +690,7 @@ public class Schedule {
                 // 아래 소스 지우고, 이제 위에서 새로 생성한 maxString을 넣어서 크기를 맞춘다.
                 monday[i].setText(maxString);
 
-                // (*편법*) 현재 강의가 비어 있다면 한글 10개를 집어넣어서 크기를 맞춰준다.
+                // (*편법*) 현재 코스가 비어 있다면 한글 10개를 집어넣어서 크기를 맞춰준다.
                 // monday[i].setText("가나다라마바사아자차");
             }
 
@@ -792,7 +799,7 @@ public class Schedule {
             // 두 소스코드를 비교해보고 뭔가 구조적으로 비슷해보이는 함수 하나를 갖고오긴 했는데 제대로 작동되지 않았다.
 */
 /*
-            monday[i].resizeText();        //얘는 이 깃허브 코드에는 없다!
+            monday[i].resizeText();        //얘는 내 깃허브 코드에는 없다!
             tuesday[i].adjustTextSize();   //얘는 내가 긁어온 깃허브 코드에 있는 함수지만 private라서 빨간불이 떴다.
             wednesday[i].adjustTextSize(); //억지로 public으로 바꿔봤지만 소용없음. 다른 비슷한 함수도 없었다.
             thursday[i].adjustTextSize();

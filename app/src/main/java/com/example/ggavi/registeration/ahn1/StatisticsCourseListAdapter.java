@@ -26,7 +26,7 @@ public class StatisticsCourseListAdapter extends BaseAdapter {
 
     private Context context;
     private List<Course> courseList;      // Course가 들어가는 리스트를 만들어줌
-    private Fragment parent;              // 12강 추가
+    private Fragment parent;
     private String userID = MainActivity.userID;  // MainActivity에 있는 public 형태의 userID를 가져와서 해당 사용자의 아이디를 저장
 
 
@@ -64,6 +64,7 @@ public class StatisticsCourseListAdapter extends BaseAdapter {
 
 
         // statistics.xml이라는 레이아웃에 있는 모든 원소가 하나의 변수로써 자리잡게 되었다.
+        // 수강신청 코드를 가져와서 고쳤기 때문에 대부분 안쓰이므로 화면에서 안보이게 해놨다.
         //TextView courseGrade = (TextView) v.findViewById(R.id.courseGrade);
         TextView courseTitle = (TextView) v.findViewById(R.id.courseTitle);
         //TextView courseDivide = (TextView) v.findViewById(R.id.courseDivide);

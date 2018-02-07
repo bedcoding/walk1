@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-// 카페24와 서버 연동 : 수강신청할 때 내 ID의 스케쥴DB에 넣기
+// 카페24와 서버 연동 : 코스 추가할 때 내 ID의 스케쥴DB에 넣기
 public class AddRequest extends StringRequest {
 
     final static private String URL = "http://ggavi2000.cafe24.com/CourseAdd.php";

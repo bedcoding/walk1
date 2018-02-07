@@ -2,6 +2,8 @@ package com.example.ggavi.registeration.ahn1;
 
 public class Course {
 
+    // 수강신청 소스를 가져와서 길찾기 소스로 수정
+    // 현재 대부분이 더미데이터로 남아 있지만 DB쿼리문이랑 PHP문까지 손대야 해서 내버려둠
     int courseID;               // 고유 번호
     String courseUniversity;    // 학부 혹은 대학원
     String courseYear;          // 해당 년도

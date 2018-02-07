@@ -76,7 +76,8 @@ public class CourseFragment extends Fragment {
 
     public static Context getContext2() {
         return context;
-    } //method that returns context for adapter classes(adpater 클래스에서 사용할 수 있게 context 넘겨주는 메소드)
+    } // method that returns context for adapter classes
+      // (adpater 클래스에서 사용할 수 있게 context 넘겨주는 메소드)
 
 
     // (9)values 폴더의 arrays.xml과 연동하여 화면에 뿌려주는 부분 시작점
@@ -451,11 +452,11 @@ public class CourseFragment extends Fragment {
 
         @Override
         // 이 부분은 MainActivity에서 복붙하지 않고 수정했다.
-        // 특정한 강의 학과를 넣었을 때, 모든 강의 리스트가 나올 수 있는지 확인
+        // 특정한 코스를 넣었을 때, 모든 코스 리스트가 나올 수 있는지 확인
         public void onPostExecute(String result) {
             try {
-                // 수정: 실제 파싱을 통해 실제 강의 목록을 보여주도록 변경
-                // 먼저, 시작화면에 courseList(해당 강의 목록을) 전부 없애준다.
+                // 수정: 실제 파싱을 통해 실제 코스 목록을 보여주도록 변경
+                // 먼저, 시작화면에 courseList(해당 코스 목록을) 전부 없애준다.
                 courseList.clear();
 
                 // 그리고 JSON 파싱을 한다.
@@ -464,9 +465,11 @@ public class CourseFragment extends Fragment {
                 int count = 0;
 
                 // 이후 Course.java 안에 있는 변수를 그대로 넣어준다.
+                // 근데 이 중에서 실제로 쓰이는 녀석은 별로 없다
+                // 안 쓰이는 녀석은 DB에서 1을 넣어두고 봉인함
                 int courseID;               // 고유 번호
                 String courseUniversity;    // 학부 혹은 대학원
-                String courseYear;             // 해당 년도
+                String courseYear;          // 해당 년도
                 String courseTerm;          // 해당 학기
                 String courseArea;          // 강의 영역
                 String courseMajor;         // 해당 학과
@@ -531,6 +534,4 @@ public class CourseFragment extends Fragment {
             }
         }
     }
-
-
 }
