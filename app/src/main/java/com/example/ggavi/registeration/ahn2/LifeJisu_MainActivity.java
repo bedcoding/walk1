@@ -1,8 +1,6 @@
 package com.example.ggavi.registeration.ahn2;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -13,21 +11,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.example.ggavi.registeration.R;
-import com.example.ggavi.registeration.phu1.FirstActivity;
-import com.example.ggavi.registeration.phu1.NormalMode;
-import com.example.ggavi.registeration.phu1.SavedSharedPreference;
 import com.tsengvn.typekit.TypekitContextWrapper;
 
 public class LifeJisu_MainActivity extends AppCompatActivity
@@ -39,7 +25,7 @@ public class LifeJisu_MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lifejisu_activity_main);
+        setContentView(R.layout.open1_weather_main);
 
 
         dbHelper = DbHelper.getsInstance(this);

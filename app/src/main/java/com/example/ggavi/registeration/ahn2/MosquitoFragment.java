@@ -91,7 +91,7 @@ public class MosquitoFragment extends Fragment {
         // Inflate the layout for this fragment
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("모기예보");
         ((AppCompatActivity)getActivity()).getSupportActionBar().setElevation(0);
-        return inflater.inflate(R.layout.fragment_mosquito, container, false);
+        return inflater.inflate(R.layout.open1_fragment_mosquito, container, false);
     }
 
 

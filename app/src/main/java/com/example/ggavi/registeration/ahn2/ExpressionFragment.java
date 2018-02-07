@@ -23,7 +23,7 @@ public class ExpressionFragment extends Fragment {
         // Inflate the layout for this fragment
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("생활지수란");
         ((AppCompatActivity) getActivity()).getSupportActionBar().setElevation(0);
-        return inflater.inflate(R.layout.fragment_expression, container, false);
+        return inflater.inflate(R.layout.open1_fragment_expression, container, false);
     }
 
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

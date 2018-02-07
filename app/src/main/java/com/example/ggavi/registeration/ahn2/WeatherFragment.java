@@ -363,7 +363,7 @@ public class WeatherFragment extends Fragment {
                 holder = new ViewHolder();
 
                 LayoutInflater inflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = inflater.inflate(R.layout.listview_item, null);
+                convertView = inflater.inflate(R.layout.open1_listview_item, null);
 
                 holder.mainImage = (ImageView)convertView.findViewById(R.id.imageView1);
                 holder.indicator = (ImageView)convertView.findViewById(R.id.indicator1);
@@ -508,7 +508,7 @@ public class WeatherFragment extends Fragment {
         queryskinWho = "http://newsky2.kma.go.kr/iros/RetrieveWhoIndexService2/getSkinWhoList?serviceKey="      //피부질환가능지수
                 + key +
                 "&areaNo=1100000000&time=";
-        return inflater.inflate(R.layout.fragment_weather, container, false);
+        return inflater.inflate(R.layout.open1_fragment_weather, container, false);
 
 
     }

@@ -28,7 +28,7 @@ public class AirFragment extends Fragment {
                              Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("대기정보");
         ((AppCompatActivity) getActivity()).getSupportActionBar().setElevation(0);
-        return inflater.inflate(R.layout.fragment_air, container, false);
+        return inflater.inflate(R.layout.open1_fragment_air, container, false);
     }
 
     @Override

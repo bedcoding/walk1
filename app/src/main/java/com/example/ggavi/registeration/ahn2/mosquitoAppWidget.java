@@ -25,7 +25,7 @@ public class mosquitoAppWidget extends AppWidgetProvider {
             Intent intent = new Intent(context, LifeJisu_MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.mosquito_app_widget);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.open1_mosquito_app_widget);
 
             views.setTextViewText(R.id.appWidget_text, grade);
             views.setOnClickPendingIntent(R.id.appWidget, pendingIntent);

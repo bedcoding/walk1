@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.ggavi.registeration.ahn2.LifeJisu_MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/open1_app_bar_main">
 
 
 </RelativeLayout>

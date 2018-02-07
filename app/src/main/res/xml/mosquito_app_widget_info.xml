@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:initialKeyguardLayout="@layout/mosquito_app_widget"
-    android:initialLayout="@layout/mosquito_app_widget"
+    android:initialKeyguardLayout="@layout/open1_mosquito_app_widget"
+    android:initialLayout="@layout/open1_mosquito_app_widget"
     android:minHeight="40dp"
     android:minWidth="100dp"
     android:previewImage="@mipmap/ic_launcher"
