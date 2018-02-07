@@ -83,6 +83,7 @@ public class LifeJisu_MainActivity extends AppCompatActivity
     }
 
 
+/*
 
     //adding the menu on tool bar (액션바에서 메뉴 추가)
     @Override
@@ -116,6 +117,8 @@ public class LifeJisu_MainActivity extends AppCompatActivity
         startActivity(intent);
         finish();
     }
+*/
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

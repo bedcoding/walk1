@@ -11,4 +11,9 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="add"
         app:showAsAction="ifRoom"></item>
+
+    <item android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title= "메인화면"/>
+
 </menu>

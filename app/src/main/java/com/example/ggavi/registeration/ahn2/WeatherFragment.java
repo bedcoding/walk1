@@ -3,6 +3,7 @@ package com.example.ggavi.registeration.ahn2;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -31,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ggavi.registeration.R;
+import com.example.ggavi.registeration.phu1.FirstActivity;
 import com.kakao.kakaolink.KakaoLink;
 import com.kakao.kakaolink.KakaoTalkLinkMessageBuilder;
 
@@ -150,6 +152,8 @@ public class WeatherFragment extends Fragment {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        // 버튼1: 새로 고침
         if (item.getItemId() == R.id.refresh) {
             String[] urls = {queryUrlUltra, queryUrlDspls, queryUrlFsn, queryUrlHeatLife, queryInflWhoList,
                     querySeonsorytemLife, queryWinterLife, queryasthmaWho, querybrainWho, queryskinWho };
@@ -172,17 +176,36 @@ public class WeatherFragment extends Fragment {
             mAdapter.notifyDataSetChanged();
             return (true);
         }
+
+        // 버튼2: 추가
         if (item.getItemId() == R.id.add) {
             setAddDialog();
             return (true);
         }
+
+        // 버튼3: 홈으로 이동
+        if (item.getItemId() == R.id.home) {
+            home();
+            return (true);
+        }
+
+/*
         if (item.getItemId() == R.id.share) {
             setShareDialog();
             return (true);
         }
+*/
         return super.onOptionsItemSelected(item);
     }
 
+    // 버튼3 누를 경우 발동!
+    public void home() {
+        Intent intent = new Intent(getActivity(), FirstActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
+    // 버튼2 누를 경우 발동!
     public void setAddDialog() {
         String[] array = {"자외선지수 (3월~11월)", "불쾌지수 (6월~9월)", "식중독지수 (연중)", "열지수 (6월~9월)"
                 ,"감기가능지수 (9월~익년4월)","체감온도 (11월~익년3월)","동파가능지수 (12월~익년2월)", "천식페질환가능지수(연중)", "뇌졸중가능지수(연중)", "피부질환가능지수(연중)"};
