@@ -113,7 +113,6 @@ public class LifeJisu_MainActivity extends AppCompatActivity
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         MosquitoFragment mosquitoFragment = new MosquitoFragment();
         WeatherFragment weatherFragment = new WeatherFragment();
-        ExpressionFragment expressionFragment = new ExpressionFragment();
         AirFragment airFragment = new AirFragment();
         int id = item.getItemId();
         if (id == R.id.nav_weather) {
@@ -121,10 +120,6 @@ public class LifeJisu_MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_mosquito) {
             transaction.replace(R.id.content_frame, mosquitoFragment);
-        }
-
-        else if (id == R.id.nav_expression) {
-            transaction.replace(R.id.content_frame, expressionFragment);
         }
 
         else if (id == R.id.nav_air) {

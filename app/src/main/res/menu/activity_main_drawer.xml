@@ -7,14 +7,12 @@
             android:id="@+id/nav_weather"
             android:icon="@android:drawable/btn_star"
             android:title="생활기상정보"/>
+
         <item
             android:id="@+id/nav_mosquito"
             android:icon="@android:drawable/btn_default"
             android:title="모기예보" />
-        <item
-            android:id="@+id/nav_expression"
-            android:icon="@android:drawable/ic_menu_help"
-            android:title="생활지수란" />
+
         <item
             android:id="@+id/nav_air"
             android:icon="@android:drawable/ic_menu_more"
